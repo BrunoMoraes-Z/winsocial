@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:skynexui_responsive_stylesheet/breakpoints/breakpoints.dart';
 import 'package:skynexui_responsive_stylesheet/responsive/responsive.dart';
 import 'package:winsocial/controller/login_controller.dart';
 import 'package:winsocial/controller/notification_controller.dart';
 import 'package:winsocial/models/app_notification.dart';
-import 'package:winsocial/screens/login/widgets/custom_password_text_field.dart';
-import 'package:winsocial/screens/login/widgets/custom_text_field.dart';
 import 'package:winsocial/screens/login/widgets/forgot_dialog.dart';
 import 'package:winsocial/screens/login/widgets/login_button.dart';
 import 'package:winsocial/shared/constants.dart';
-import 'package:provider/provider.dart';
 import 'package:winsocial/shared/toast_card.dart';
+import 'package:winsocial/widgets/custom_password_text_field.dart';
+import 'package:winsocial/widgets/custom_text_field.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -109,8 +109,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     }),
                     height: 480,
                     padding: responsive.value({
-                      Breakpoints.xs: const EdgeInsets.symmetric(horizontal: 16),
-                      Breakpoints.sm: const EdgeInsets.symmetric(horizontal: 16),
+                      Breakpoints.xs:
+                          const EdgeInsets.symmetric(horizontal: 16),
+                      Breakpoints.sm:
+                          const EdgeInsets.symmetric(horizontal: 16),
                       Breakpoints.xl: EdgeInsets.zero,
                     }),
                     child: Column(
@@ -142,6 +144,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             Breakpoints.lg: 500,
                             Breakpoints.xl: 500,
                           }),
+                          textInputType: TextInputType.number,
                         ),
                         const SizedBox(height: 30),
                         CustomPasswordTextField(
@@ -154,6 +157,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             Breakpoints.lg: 500,
                             Breakpoints.xl: 500,
                           }),
+                          textInputAction: TextInputAction.done,
                         ),
                         const SizedBox(height: 80),
                         LoginButton(

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:winsocial/screens/find_medicine/widgets/transition_button.dart';
-import 'package:winsocial/screens/login/widgets/custom_password_text_field.dart';
-import 'package:winsocial/screens/login/widgets/custom_text_field.dart';
 import 'package:winsocial/shared/constants.dart';
+import 'package:winsocial/widgets/custom_password_text_field.dart';
+import 'package:winsocial/widgets/custom_text_field.dart';
 import 'package:winsocial/widgets/default_frame.dart';
 
 class ChangePasswordScreen extends StatelessWidget {
@@ -34,6 +34,7 @@ class ChangePasswordScreen extends StatelessWidget {
               focusLabel: 'NOVA SENHA',
               textFieldType: TextFieldType.light,
               onChanged: (value) {},
+              textInputType: TextInputType.number,
             ),
             const SizedBox(height: 24),
             CustomPasswordTextField(
@@ -41,6 +42,8 @@ class ChangePasswordScreen extends StatelessWidget {
               focusLabel: 'REPETIR NOVA SENHA',
               textFieldType: TextFieldType.light,
               onChanged: (value) {},
+              textInputType: TextInputType.number,
+              textInputAction: TextInputAction.done,
             ),
             const SizedBox(height: 48),
             TransitionButton(

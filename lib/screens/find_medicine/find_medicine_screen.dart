@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:winsocial/controller/notification_controller.dart';
 import 'package:winsocial/models/app_notification.dart';
 import 'package:winsocial/screens/find_medicine/widgets/transition_button.dart';
-import 'package:winsocial/screens/login/widgets/custom_text_field.dart';
 import 'package:winsocial/shared/constants.dart';
+import 'package:winsocial/widgets/custom_text_field.dart';
 import 'package:winsocial/widgets/default_frame.dart';
-import 'package:provider/provider.dart';
 
 class FindMedicineScreen extends StatelessWidget {
   const FindMedicineScreen({Key? key}) : super(key: key);

@@ -16,12 +16,16 @@ class CustomTextField extends StatefulWidget {
     this.textFieldType = TextFieldType.stroke,
     this.enabled = true,
     this.inputFormatters,
+    this.textInputType = TextInputType.name,
+    this.textInputAction = TextInputAction.next,
     Key? key,
   }) : super(key: key);
 
   final String label;
   final Function(String) onChanged;
   final TextFieldType textFieldType;
+  late TextInputType textInputType;
+  late TextInputAction textInputAction;
   late String focusLabel;
   late bool enabled;
   late String initialValue;
@@ -90,8 +94,8 @@ class _CustomTextFieldState extends State<CustomTextField> {
                 setState(() {});
               },
               inputFormatters: widget.inputFormatters,
-              keyboardType: TextInputType.number,
-              textInputAction: TextInputAction.next,
+              keyboardType: widget.textInputType,
+              textInputAction: widget.textInputAction,
               decoration: InputDecoration(
                 errorStyle: const TextStyle(
                   fontSize: 0,
@@ -122,8 +126,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
             children: [
               Container(
                 width: widget.maxSize,
-                height:
-                    widget.textFieldType == TextFieldType.stroke ? 1.5 : 1,
+                height: widget.textFieldType == TextFieldType.stroke ? 1.5 : 1,
                 color: widget.textFieldType == TextFieldType.stroke
                     ? Colors.white
                     : Colors.grey,
@@ -131,8 +134,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
               AnimatedContainer(
                 duration: const Duration(milliseconds: 200),
                 width: focused ? widget.maxSize : 0,
-                height:
-                    widget.textFieldType == TextFieldType.stroke ? 3.5 : 3,
+                height: widget.textFieldType == TextFieldType.stroke ? 3.5 : 3,
                 color: widget.textFieldType == TextFieldType.stroke
                     ? Colors.white
                     : constants.primary,
