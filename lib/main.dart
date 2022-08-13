@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:winsocial/shared/providers.dart';
-import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:winsocial/shared/routes.dart';
-
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
