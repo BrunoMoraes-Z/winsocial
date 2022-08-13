@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:winsocial/controller/login_controller.dart';
 import 'package:winsocial/screens/change_password/change_password.dart';
 import 'package:winsocial/screens/exame/exame_screen.dart';
@@ -9,7 +10,6 @@ import 'package:winsocial/screens/find_medicine/find_medicine_screen.dart';
 import 'package:winsocial/screens/home/home_screen.dart';
 import 'package:winsocial/screens/login/login_screen.dart';
 import 'package:winsocial/screens/tele_saude/tele_saude_screen.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 final loginController = LoginController();
 const _defaultRoute = '/';
@@ -17,31 +17,66 @@ const _defaultRoute = '/';
 final _routes = [
   GoRoute(
     path: '/',
-    builder: (context, state) => const HomeScreen(),
+    pageBuilder: (context, state) {
+      return NoTransitionPage(
+        key: state.pageKey,
+        child: const HomeScreen(),
+      );
+    },
   ),
   GoRoute(
     path: '/login',
-    builder: (context, state) => const LoginScreen(),
+    pageBuilder: (context, state) {
+      return NoTransitionPage(
+        key: state.pageKey,
+        child: const LoginScreen(),
+      );
+    },
   ),
   GoRoute(
     path: '/telemedicina',
-    builder: (context, state) => const TeleSaudeScreen(),
+    pageBuilder: (context, state) {
+      return NoTransitionPage(
+        key: state.pageKey,
+        child: const TeleSaudeScreen(),
+      );
+    },
   ),
   GoRoute(
     path: '/encontrar-medicamento',
-    builder: (context, state) => const FindMedicineScreen(),
+    pageBuilder: (context, state) {
+      return NoTransitionPage(
+        key: state.pageKey,
+        child: const FindMedicineScreen(),
+      );
+    },
   ),
   GoRoute(
     path: '/consulta-exame',
-    builder: (context, state) => const ExameScreen(),
+    pageBuilder: (context, state) {
+      return NoTransitionPage(
+        key: state.pageKey,
+        child: const ExameScreen(),
+      );
+    },
   ),
   GoRoute(
     path: '/encontrar-farmacia',
-    builder: (context, state) => const FindFarmacy(),
+    pageBuilder: (context, state) {
+      return NoTransitionPage(
+        key: state.pageKey,
+        child: const FindFarmacy(),
+      );
+    },
   ),
   GoRoute(
     path: '/alterar-senha',
-    builder: (context, state) => const ChangePasswordScreen(),
+    pageBuilder: (context, state) {
+      return NoTransitionPage(
+        key: state.pageKey,
+        child: const ChangePasswordScreen(),
+      );
+    },
   )
 ];
 
