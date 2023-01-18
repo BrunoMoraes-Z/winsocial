@@ -15,7 +15,7 @@ class InfoSteps extends StatelessWidget {
             InfoIconCard(
               asset: 'assets/telefone.png',
               step: 1,
-              child: SelectableText.rich(
+              child: Text.rich(
                 TextSpan(
                   text: 'Ligue na Central Concierge\nda Saúde através do\n',
                   style: TextStyle(

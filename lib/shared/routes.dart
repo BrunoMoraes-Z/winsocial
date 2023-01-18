@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -20,7 +19,9 @@ final _routes = [
     pageBuilder: (context, state) {
       return NoTransitionPage(
         key: state.pageKey,
-        child: const HomeScreen(),
+        child: const SelectionArea(
+          child: HomeScreen(),
+        ),
       );
     },
   ),
@@ -29,7 +30,9 @@ final _routes = [
     pageBuilder: (context, state) {
       return NoTransitionPage(
         key: state.pageKey,
-        child: const LoginScreen(),
+        child: const SelectionArea(
+          child: LoginScreen(),
+        ),
       );
     },
   ),
@@ -38,7 +41,9 @@ final _routes = [
     pageBuilder: (context, state) {
       return NoTransitionPage(
         key: state.pageKey,
-        child: const TeleSaudeScreen(),
+        child: const SelectionArea(
+          child: TeleSaudeScreen(),
+        ),
       );
     },
   ),
@@ -47,7 +52,9 @@ final _routes = [
     pageBuilder: (context, state) {
       return NoTransitionPage(
         key: state.pageKey,
-        child: const FindMedicineScreen(),
+        child: const SelectionArea(
+          child: FindMedicineScreen(),
+        ),
       );
     },
   ),
@@ -56,7 +63,9 @@ final _routes = [
     pageBuilder: (context, state) {
       return NoTransitionPage(
         key: state.pageKey,
-        child: const ExameScreen(),
+        child: const SelectionArea(
+          child: ExameScreen(),
+        ),
       );
     },
   ),
@@ -65,7 +74,9 @@ final _routes = [
     pageBuilder: (context, state) {
       return NoTransitionPage(
         key: state.pageKey,
-        child: const FindFarmacy(),
+        child: const SelectionArea(
+          child: FindFarmacy(),
+        ),
       );
     },
   ),
@@ -74,7 +85,9 @@ final _routes = [
     pageBuilder: (context, state) {
       return NoTransitionPage(
         key: state.pageKey,
-        child: const ChangePasswordScreen(),
+        child: const SelectionArea(
+          child: ChangePasswordScreen(),
+        ),
       );
     },
   )

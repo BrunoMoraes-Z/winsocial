@@ -26,7 +26,7 @@ class ExameScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
-            const SelectableText(
+            const Text(
               '0800 022 4073',
               style: TextStyle(
                 color: Colors.black,
