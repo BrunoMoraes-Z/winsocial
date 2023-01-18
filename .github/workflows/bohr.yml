@@ -9,5 +9,28 @@ jobs:
     name: Deploy on bohr.io
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: bohr-io/action@main
+      - name: Install Flutter
+        uses: britannio/action-install-flutter@v1.1
+        with:
+          version: stable
+
+      - name: Enable Flutter Web
+        run: flutter config --enable-web
+
+      - name: Flutter Doctor
+        run: flutter doctor
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        run: flutter pub get
+      
+      - name: Build flutter web
+        run: flutter build web --release
+      
+      - name: Setup Artifact
+        run: mv build/web src/*
+
+      - name: deploy
+        uses: bohr-io/action@main
