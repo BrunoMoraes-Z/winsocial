@@ -30,7 +30,9 @@ jobs:
         run: flutter build web --release
       
       - name: Setup Artifact
-        run: mv build/web src/*
+        run: |
+          mkdir src
+          mv build/web src/*
 
       - name: deploy
         uses: bohr-io/action@main
